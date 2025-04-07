@@ -106,13 +106,48 @@
     .geology .front { background-color: #FF7F50; }
     .computer-science .front { background-color: violet; }
 
+
+
+
+      .nav-button {
+      position: absolute;
+      top: 12px;
+      padding: 10px 10px;
+      background-color: #F0FFFF;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 10px;
+      font-family: 'Orbitron', sans-serif;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: gold;
+    }
+
+    #back-btn {
+      left: 50px;
+ margin: 10px
+  }
+
+    #prev-btn {
+      right: 50px;
+  margin: 10px
+  }
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      font-size: 1.2em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall linear infinite;
+    }
     
 
-    .back-btn  { left: 20px;
-}
-
-.prev-btn { right: 20px;
-}
+   
 
     button {
       background-color: #32CD32;
