@@ -120,8 +120,13 @@
       z-index: 10;
     }
 
-    .back-button { left: 20px; }
-    .back-button { right: 20px; }
+    .back-btn {
+  left: 20px;
+}
+
+.prev-btn {
+  right: 20px;
+}
 
     button {
       background-color: #32CD32;
@@ -175,8 +180,8 @@
     setInterval(createSnowflake, 150);
   </script>
 
-  <button class="back-button" onclick="goBack()">Back</button>
-  <a href="index.html" class="back-button">Previous Page</a>
+  <a href="science.html" class="back-button" id="back-btn">Back</a>
+<a href="index.html" class="back-button" id="prev-btn">Previous Page</a>
 
   <h1 id="main-heading">Select a Subject</h1>
 
