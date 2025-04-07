@@ -1,0 +1,40 @@
+/* Orbitron Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+  color: white;
+  font-family: 'Orbitron', sans-serif; /* ✅ Same font as index.html */
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+<style>
+  .back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+
+  button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #666;
+  }
+</style>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Important Questions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      background: #0d1b2a;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 100px;
+      text-shadow: 0 0 10px gold;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .class-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      gap: 40px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .class-box {
+      border-radius: 15px;
+      padding: 40px 60px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      color: #000;
+      transition: 0.3s;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .class11 {
+      background: gold;
+    }
+
+    .class12 {
+      background: gold;
+    }
+
+    .class-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="tsparticles"></div>
+
+  <button class="back-button" onclick="goBack()">← Back</button>
+
+  <h1 id="page-title">Select Your Class</h1>
+
+  <div class="class-container" id="class-section">
+    <a href="class11-important.html" class="class-box class11">Class 11</a>
+    <a href="important-questions-class12-physics.html" class="class-box class12">Class 12</a>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = "physics.html";
+    }
+
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: { value: 100 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 2,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 0.5
+        }
+      },
+      background: {
+        color: "#0d1b2a"
+      }
+    });
+
+    // Fade-in Animation on Load
+    window.addEventListener("load", () => {
+      document.getElementById("page-title").classList.add("fade-in");
+      document.getElementById("class-section").classList.add("fade-in");
+    });
+  </script>
+
+</body>
+</html>

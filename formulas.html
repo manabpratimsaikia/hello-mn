@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: white;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .back-button {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px cyan;
+    }
+    .toggle-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .toggle-buttons button {
+      padding: 8px 16px;
+      font-size: 14px;
+      border: 1px solid white;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .toggle-buttons button:hover,
+    .toggle-buttons button.active {
+      background-color: #00bcd4;
+      color: black;
+    }
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #1e1e1e;
+      color: #00e5ff;
+    }
+    .h3 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px cyan;
+    }
+    a {
+      color: #00e5ff;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: cyan;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="goBack()">← Back</button>
+  <h1>Formulas and Derivations</h1>
+
+  <div class="toggle-buttons">
+    <button id="btn11" class="active" onclick="showClass('class11')">Class 11</button>
+    <button id="btn12" onclick="showClass('class12')">Class 12</button>
+  </div>
+
+  <!-- Class 11 Content -->
+  <div id="class11" class="content-section active">
+    <h2>Dimensional Formula of Physical Quantities</h2>
+    <table>
+      <tr>
+        <th>S. No.</th>
+        <th>Physical Quantity</th>
+        <th>Relationship</th>
+        <th>Dimension</th>
+      </tr>
+      <tr><td>1</td><td>Area</td><td>Length × Breadth</td><td>[L²]</td></tr>
+      <tr><td>2</td><td>Volume</td><td>Length × Breadth × Height</td><td>[L³]</td></tr>
+      <tr><td>3</td><td>Mass density</td><td>Mass / Volume</td><td>[ML⁻³]</td></tr>
+      <tr><td>4</td><td>Frequency</td><td>1 / Time period</td><td>[T⁻¹]</td></tr>
+      <tr><td>5</td><td>Velocity / Speed</td><td>Displacement / Time</td><td>[LT⁻¹]</td></tr>
+      <tr><td>6</td><td>Acceleration</td><td>Velocity / Time</td><td>[LT⁻²]</td></tr>
+      <tr><td>7</td><td>Impulse</td><td>Force × Time</td><td>[MLT⁻¹]</td></tr>
+      <tr><td>8</td><td>Force</td><td>Mass × Acceleration</td><td>[MLT⁻²]</td></tr>
+      <tr><td>9</td><td>Work / Energy</td><td>Force × Distance</td><td>[ML²T⁻²]</td></tr>
+      <tr><td>10</td><td>Power</td><td>Work / Time</td><td>[ML²T⁻³]</td></tr>
+      <tr><td>11</td><td>Momentum</td><td>Mass × Velocity</td><td>[MLT⁻¹]</td></tr>
+      <tr><td>12</td><td>Pressure / Stress</td><td>Force / Area</td><td>[ML⁻¹T⁻²]</td></tr>
+      <tr><td>13</td><td>Strain</td><td>Change in dimension / Original dimension</td><td>Dimensionless</td></tr>
+      <tr><td>14</td><td>Modulus of elasticity</td><td>Stress / Strain</td><td>[ML⁻¹T⁻²]</td></tr>
+      <tr><td>15</td><td>Surface tension</td><td>Force / Length</td><td>[MT⁻²]</td></tr>
+      <tr><td>16</td><td>Surface energy</td><td>Energy / Area</td><td>[ML⁰T⁻²]</td></tr>
+      <tr><td>17</td><td>Velocity gradient</td><td>Velocity / Distance</td><td>[T⁻¹]</td></tr>
+      <tr><td>18</td><td>Pressure energy</td><td>Pressure × Volume</td><td>[ML²T⁻²]</td></tr>
+      <tr><td>19</td><td>Force energy</td><td>Force × Area × Velocity Gradient</td><td>[ML²T⁻³]</td></tr>
+      <tr><td>20</td><td>Coefficient of viscosity</td><td>Force / (Area × Velocity Gradient)</td><td>[ML⁻¹T⁻¹]</td></tr>
+      <tr><td>21</td><td>Angle / Angular displacement</td><td>-</td><td>Dimensionless</td></tr>
+      <tr><td>22</td><td>Angular velocity</td><td>Angle / Time</td><td>[T⁻¹]</td></tr>
+      <tr><td>23</td><td>Trigonometric ratio</td><td>(sinθ, cosθ, tanθ, etc.)</td><td>Dimensionless</td></tr>
+      <tr><td>24</td><td>Angular acceleration</td><td>Angular velocity / Time</td><td>[T⁻²]</td></tr>
+      <tr><td>25</td><td>Radius of gyration</td><td>Distance</td><td>[L]</td></tr>
+      <tr><td>26</td><td>Moment of inertia</td><td>Mass × (Radius of gyration)²</td><td>[ML²]</td></tr>
+      <tr><td>27</td><td>Torque</td><td>Force × Distance</td><td>[ML²T⁻²]</td></tr>
+      <tr><td>28</td><td>Angular momentum</td><td>Moment of Inertia × Angular velocity</td><td>[ML²T⁻¹]</td></tr>
+      <tr><td>29</td><td>Angular frequency</td><td>2π × Frequency</td><td>[T⁻¹]</td></tr>
+      <tr><td>30</td><td>Wavelength</td><td>Distance</td><td>[L]</td></tr>
+      <tr><td>31</td><td>Hubble constant</td><td>Speed / Distance</td><td>[T⁻¹]</td></tr>
+      <tr><td>32</td><td>Intensity of wave</td><td>Power / Area</td><td>[ML⁰T⁻³]</td></tr>
+      <tr><td>33</td><td>Radiation pressure</td><td>Energy density</td><td>[ML⁻¹T⁻²]</td></tr>
+      <tr><td>34</td><td>Energy density</td><td>Energy / Volume</td><td>[ML⁻¹T⁻²]</td></tr>
+      <tr><td>35</td><td>Critical velocity</td><td>–</td><td>[LT⁻¹]</td></tr>
+    </table>
+
+    <br><br>
+
+    <h2>Derivations</h2> 
+    <br><br>
+    Currently unavailable.  
+    We recommend referring to your <font color=red>NCERT</font> textbook for detailed derivations.  
+  <p> <br>If you don't have a copy, you can download it from the official  
+    <a href="https://ahsec.assam.gov.in/index.php/hs-1st-year-textbooks/" target="_blank">AHSEC</a> website. </p> 
+    <br>It may take time to study, but it will surely help you <font color=red>build a stronger understanding. </font>
+    <br><br><br><br><br><br>
+  </div>
+
+  <!-- Class 12 Content -->
+  <div id="class12" class="content-section">
+    <h2>Coming Soon...</h2>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = "physics.html";
+    }
+
+    function showClass(classId) {
+      document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+      document.getElementById(classId).classList.add('active');
+
+      document.getElementById('btn11').classList.remove('active');
+      document.getElementById('btn12').classList.remove('active');
+      if (classId === 'class11') {
+        document.getElementById('btn11').classList.add('active');
+      } else {
+        document.getElementById('btn12').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

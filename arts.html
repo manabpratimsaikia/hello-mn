@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arts Subjects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(270deg, #1f1c2c, #928dab);
+      background-size: 400% 400%;
+      animation: gradientAnimation 20s ease infinite;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .box {
+      width: 145px;
+      height: 145px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .inner-box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .box.touch-glow .inner-box {
+      transform: rotateY(180deg);
+      box-shadow: 0 0 25px white;
+    }
+
+    .front, .back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: black;
+      backface-visibility: hidden;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .back {
+      background-color: #212121;
+      color: white;
+      flex-direction: column;
+      transform: rotateY(180deg);
+    }
+
+    .history .front { background-color: #FFA07A; }
+    .political-science .front { background-color: #FFD700; }
+    .education .front { background-color: #40E0D0; }
+    .economics .front { background-color: #FF69B4; }
+    .philosophy .front { background-color: #8A2BE2; }
+    .sociology .front { background-color: #00CED1; }
+    .geography .front { background-color: #98FB98; } /* Geography color */
+
+    .back-button, .prev-page-button {
+      position: absolute;
+      top: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .back-button { left: 20px; }
+    .prev-page-button { right: 20px; }
+
+    button {
+      background-color: #4682B4;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4169E1;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      font-size: 1.2em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Snowflakes -->
+  <script>
+    const colors = ["pink", "gold", "turquoise", "orchid", "aqua", "coral", "lightgreen"];
+
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.textContent = "᪥";
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+      snowflake.style.color = colors[Math.floor(Math.random() * colors.length)];
+      snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);
+    }
+
+    setInterval(createSnowflake, 150);
+  </script>
+
+  <button class="back-button" onclick="goBack()">Back</button>
+  <button class="prev-page-button" onclick="goToPreviousPage()">← Previous Page</button>
+
+  <h1 id="main-heading">Select a Subject</h1>
+
+  <div class="container">
+    <div class="box history" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">History</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box political-science" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Political Science</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box education" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Education</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box economics" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Economics</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box philosophy" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Philosophy</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box sociology" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Sociology</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+
+    <div class="box geography" onclick="flipBox(this)">
+      <div class="inner-box">
+        <div class="front">Geography</div>
+        <div class="back"><button>Open</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goToPreviousPage() {
+      window.history.back();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const subjects = document.querySelectorAll(".box");
+      subjects.forEach((subject, index) => {
+        setTimeout(() => {
+          subject.classList.add("show");
+        }, index * 100);
+      });
+    });
+
+    function flipBox(selectedBox) {
+      const allBoxes = document.querySelectorAll(".box");
+      const heading = document.getElementById("main-heading");
+
+      if (selectedBox.classList.contains("touch-glow")) return;
+
+      allBoxes.forEach(box => {
+        if (box !== selectedBox) {
+          box.style.opacity = "0";
+          box.style.transform = "scale(0.8)";
+          setTimeout(() => { box.style.display = "none"; }, 500);
+        } else {
+          box.classList.add("touch-glow");
+        }
+      });
+
+      heading.textContent = "‌🙎";
+    }
+
+    function goBack() {
+      const allBoxes = document.querySelectorAll(".box");
+      const heading = document.getElementById("main-heading");
+
+      allBoxes.forEach(box => {
+        box.classList.remove("touch-glow");
+        box.style.display = "flex";
+        box.style.opacity = "1";
+        box.style.transform = "scale(1)";
+      });
+
+      heading.textContent = "Select a Subject";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapter 7 - Alternating Current</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0d1b2a;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #ffcc00;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffff;
+      font-size: 22px;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    h2 {
+      color: #ffcc00;
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .answer {
+      color: #90ee90;
+      margin-top: 5px;
+    }
+
+    .box {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .mcq-box {
+      background-color: rgba(255, 204, 0, 0.1);
+      border: 2px solid #ffcc00;
+      animation-delay: 0.3s;
+    }
+
+    .vsq-box {
+      background-color: rgba(0, 255, 255, 0.1);
+      border: 2px solid #00ffff;
+      animation-delay: 0.6s;
+    }
+
+    .longq-box {
+      background-color: rgba(144, 238, 144, 0.1);
+      border: 2px solid #90ee90;
+      animation-delay: 0.9s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: #ff9999;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-button" href="important-questions-class12-physics.html">&larr; Back to Chapters</a>
+
+  <p class="note">Note: This chapter contains many questions, but only the most important ones are listed here.</p>
+
+  <h1>Important Questions - Chapter 7<br>Alternating Current</h1>
+
+  <div class="box mcq-box">
+    <h2>Multiple Choice Questions (MCQs)</h2>
+    <ul>
+      <li>The frequency of AC in India is:
+        <div class="answer">Answer: 50 Hz</div>
+      </li>
+      <li>In pure resistive AC circuit, current and voltage are:
+        <div class="answer">Answer: In phase</div>
+      </li>
+      <li>Power factor of pure inductive or capacitive circuit is:
+        <div class="answer">Answer: Zero</div>
+      </li>
+      <li>What is the average value of AC over one full cycle?
+        <div class="answer">Answer: Zero</div>
+      </li>
+      <li>What is the relation between peak and RMS value of AC?
+        <div class="answer">Answer: I<sub>rms</sub> = I<sub>0</sub>/√2</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="box vsq-box">
+    <h2>Very Short Questions (VSQs)</h2>
+    <ul>
+      <li>Define RMS value of alternating current.
+        <div class="answer">Answer: It is the value of DC current that produces same heat as AC in same time</div>
+      </li>
+      <li>What is power factor?
+        <div class="answer">Answer: Cosine of phase angle between voltage and current</div>
+      </li>
+      <li>What is a choke coil?
+        <div class="answer">Answer: A coil with high inductance and low resistance used to control AC current</div>
+      </li>
+      <li>Write the expression of current in an LCR circuit.
+        <div class="answer">Answer: I = V / Z, where Z is impedance</div>
+      </li>
+      <li>What is the condition for resonance in LCR circuit?
+        <div class="answer">Answer: XL = XC or ωL = 1/ωC</div>
+      </li>
+    </ul>
+  </div>
+
+  <p class="note">Note: Please go through the questions only. You may refer to other sources for answers, as the accuracy of answers provided here may be limited.</p>
+
+  <div class="box longq-box">
+    <h2>Long Answer Questions</h2>
+    <ul>
+      <li>Derive the expression for current in an AC circuit containing only resistor.
+        <div class="answer">Answer: I = V<sub>0</sub> sin(ωt)/R = I<sub>0</sub> sin(ωt)</div>
+      </li>
+      <li>Derive the expression for average and RMS value of AC.
+        <div class="answer">Answer: I<sub>avg</sub> = (2/π)I<sub>0</sub>, I<sub>rms</sub> = I<sub>0</sub>/√2</div>
+      </li>
+      <li>Explain the phasor diagram of RLC series circuit.
+        <div class="answer">Answer: Shows vector addition of voltage across R, L, and C; phase angle determines power factor</div>
+      </li>
+      <li>Explain resonance in series LCR circuit and its significance.
+        <div class="answer">Answer: Resonance occurs when XL = XC, current is maximum and impedance is minimum</div>
+      </li>
+      <li>Define power factor and derive expression for power in AC circuit.
+        <div class="answer">Answer: Power = VI cos(φ); cos(φ) is power factor</div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>
